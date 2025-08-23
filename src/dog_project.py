@@ -12,13 +12,14 @@ class Dog:
     Clase Dog representa el concepto de un perro.
     En POO, una clase es un molde para crear objetos (instancias).
     """
-    def __init__(self, name: str, age: int):
+    def __init__(self, name: str, age: int, objeto):
         """
         El método __init__ es el constructor. Se llama automáticamente al crear una instancia.
         Los atributos son las características del objeto.
         """
         self.name = name
         self.age = age
+        self.objeto = objeto
         logging.info(f"Se ha creado un perro llamado {self.name} de {self.age} años.")
 
     def bark(self):
@@ -34,6 +35,9 @@ class Dog:
         """
         self.age += 1
         logging.info(f"{self.name} ahora tiene {self.age} años.")
+    def fetch (self):
+        
+        print(f"({self.name} ha encontrado {self.objeto})")
 
 if __name__ == "__main__":
     # Crear instancias de la clase Dog
