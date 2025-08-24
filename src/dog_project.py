@@ -12,14 +12,13 @@ class Dog:
     Clase Dog representa el concepto de un perro.
     En POO, una clase es un molde para crear objetos (instancias).
     """
-    def __init__(self, name: str, age: int, objeto):
+    def __init__(self, name: str, age: int):
         """
         El método __init__ es el constructor. Se llama automáticamente al crear una instancia.
         Los atributos son las características del objeto.
         """
         self.name = name
         self.age = age
-        self.objeto = objeto
         logging.info(f"Se ha creado un perro llamado {self.name} de {self.age} años.")
 
     def bark(self):
@@ -35,14 +34,23 @@ class Dog:
         """
         self.age += 1
         logging.info(f"{self.name} ahora tiene {self.age} años.")
-    def fetch (self):
-        
-        print(f"({self.name} ha encontrado {self.objeto})")
+
+    def compare_age(self, other_dog):
+        """
+        Compara la edad de este perro con la de otro perro.
+        """
+        if self.age > other_dog.age:
+            print(f"{self.name} es mayor que {other_dog.name}.")
+        elif self.age < other_dog.age:
+            print(f"{other_dog.name} es mayor que {self.name}.")
+        else:
+            print(f"{self.name} y {other_dog.name} tienen la misma edad.")
 
 if __name__ == "__main__":
     # Crear instancias de la clase Dog
     dog1 = Dog("Rex", 3)
     dog2 = Dog("Luna", 5)
+    dog3 = Dog("Max", 3)
 
     # Llamar métodos
     dog1.bark()
@@ -55,3 +63,7 @@ if __name__ == "__main__":
     # Mostrar atributos
     print(f"{dog1.name} tiene {dog1.age} años.")
     print(f"{dog2.name} tiene {dog2.age} años.")
+
+    # Comparar edades
+    dog1.compare_age(dog2)
+    dog1.compare_age(dog3)

@@ -34,11 +34,17 @@ class Cat:
         """
         self.age += 1
         logging.info(f"{self.name} ahora tiene {self.age} años.")
+    
+    def sleep(self):
+
+        logging.info(f"{self.name} está durmiendo")
+        print(f"{self.name}: Zzzzzzzzzzzzzz")
 
 if __name__ == "__main__":
     # Crear instancias de la clase Cat
     cat1 = Cat("Milo", 2)
     cat2 = Cat("Nina", 4)
+
 
     # Llamar métodos
     cat1.meow()
@@ -51,3 +57,6 @@ if __name__ == "__main__":
     # Mostrar atributos
     print(f"{cat1.name} tiene {cat1.age} años.")
     print(f"{cat2.name} tiene {cat2.age} años.")
+
+    cat1.sleep()
+    cat2.sleep()
